@@ -15,31 +15,18 @@ RUN pip3 install conan
 
 # Copy the current folder which contains C++ source code to the Docker image under /usr/src
 COPY . app
-
 # Specify the working directory
-WORKDIR app/src
+WORKDIR app
 
 EXPOSE 8000
-RUN conan install conanfile.txt --build missing
+RUN cd src && conan install conanfile.txt --build missing
 
+RUN cd src && mkdir build && ls && cd build && cmake ../ && cmake --build .
 
-# Use Clang to compile the Test.cpp source file
-#RUN clang++ -o Test Test.cpp
-
-#RUN find . -iwholename '*cmake*' -not -name CMakeLists.txt -delete
-
-RUN mkdir build
-RUN cd build
-RUN cmake ../src
-
-RUN cmake --build .
 # Run the output program from the previous step
-RUN ls
-RUN cd ../src/bin/
-RUN ls
-CMD ls
-CMD chmod 777 bin/timer
-CMD bin/timer
+#CMD chmod 777 bin/timer
+CMD build/bin/timer
 
 #conan install conanfile.txt --build missing
 #docker build -t docker-cpp-sample .
+#RUN find . -iwholename '*cmake*' -not -name CMakeLists.txt -delete

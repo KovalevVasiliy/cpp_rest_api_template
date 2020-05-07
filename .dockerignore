@@ -1,0 +1,4 @@
+.git
+.cache
+cmake-build-debug
+build/
