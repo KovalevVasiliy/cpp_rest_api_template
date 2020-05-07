@@ -23,9 +23,10 @@ EXPOSE 8000
 #--build missing
 
 RUN cd src && conan install conanfile.txt && ls
+RUN cd src && conan profile update settings.compiler.libcxx=libstdc++11 default
 RUN cd src && ls && cmake . && ls && cmake --build .
 
-RUN app/src/bin/timer
+#RUN app/src/bin/timer
 #RUN cd src && mkdir build && mv conanfile.txt build && cd build && conan install conanfile.txt
 #RUN cd src/build && cmake .. && make && make install
 
