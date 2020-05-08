@@ -8,9 +8,9 @@ EXPOSE 8000
 USER root
 RUN chmod 777 -R /home/conan/app
 USER conan
-#RUN conan profile update settings.compiler.libcxx=libstdc++11 default
-RUN conan install . -s compiler.libcxx=libstdc++11 --build missing
-RUN mkdir build && cd build && cmake .. && cmake --build .
+RUN mkdir build
+RUN conan install . -s compiler.libcxx=libstdc++11 -if build --build missing
+RUN cd build && cmake .. && cmake --build .
 CMD ["build/bin/timer"]
 
 #conan install conanfile.txt --build missing
