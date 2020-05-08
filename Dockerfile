@@ -11,7 +11,7 @@ USER conan
 RUN mkdir build
 RUN conan install . -s compiler.libcxx=libstdc++11 -if build --build missing
 RUN cd build && cmake .. && cmake --build .
-CMD ["build/bin/timer"]
+CMD ["build/bin/server"]
 
 #conan install conanfile.txt --build missing
 #docker build -t docker-cpp-sample .

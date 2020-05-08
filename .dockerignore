@@ -1,5 +1,4 @@
 .git
 .cache
-cmake-build-debug
-build/
-CMakeCache.txt
+src/build
+src/build/**/*
