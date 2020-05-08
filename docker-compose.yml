@@ -1,0 +1,38 @@
+version: "3.4"
+
+networks:
+  db_net:
+    external: true
+  default:
+
+services:
+  core: &src
+    container_name: template-core
+    environment:
+      - RUN_LEVEL=dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/opt/app
+    networks:
+      - default
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    ports:
+      - "8000:8000"
+  postgres:
+    container_name: template-postgres
+    image: mdillon/postgis
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: user
+      POSTGRES_DB: template
+    networks:
+      - db_net
+      - default
+    volumes:
+      - ./.docker_data/postgres:/var/lib/postgresql/data

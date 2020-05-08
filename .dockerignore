@@ -2,3 +2,5 @@
 .cache
 src/build
 src/build/**/*
+cmake-build-debug/
+.docker_data

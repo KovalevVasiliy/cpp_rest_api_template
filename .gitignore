@@ -1,2 +1,3 @@
 src/build
-
+src/cmake-build-debug/
+.docker_data

@@ -1,15 +1,12 @@
 #include <iostream>
 #include <string>
 
-#include <Poco/Mutex.h>
 #include <Poco/Net/HTTPServerRequest.h>
 #include <Poco/Net/HTTPRequestHandler.h>
 #include <Poco/Net/HTTPServerResponse.h>
 #include <Poco/Net/HTTPServer.h>
 #include <Poco/Net/HTTPRequestHandlerFactory.h>
 #include <Poco/Net/HTMLForm.h>
-#include <Poco/Path.h>
-#include <Poco/ScopedLock.h>
 #include <Poco/StringTokenizer.h>
 #include <Poco/URI.h>
 
