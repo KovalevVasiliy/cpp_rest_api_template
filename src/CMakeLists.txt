@@ -4,5 +4,5 @@ set(CMAKE_CXX_STANDARD 17)
 include(build/conanbuildinfo.cmake)
 conan_basic_setup()
 
-add_executable(server main.cpp server.cpp server.h)
+add_executable(server main.cpp server.cpp server.h database.cpp database.h test.cpp test.h)
 target_link_libraries(server ${CONAN_LIBS})

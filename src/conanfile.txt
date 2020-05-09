@@ -1,5 +1,6 @@
 [requires]
-Poco/1.10.1@pocoproject/stable
+poco/1.9.3
+libpq/11.5
 
 [generators]
 cmake
