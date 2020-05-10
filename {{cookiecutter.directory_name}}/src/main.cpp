@@ -5,7 +5,7 @@
 int main(int argc, char** argv)
 {
     //
-    //Test::TestDB();
+    Test::TestDB();
     //
     TemplateServerApp app;
 

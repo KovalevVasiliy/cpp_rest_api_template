@@ -4,5 +4,5 @@
 void Test::TestDB()
 {
     Database db;
-    db.ExecuteSQL("create table if not exists users(id int, name text);");
+    db.ExecuteSQL("create table if not exists sosi(id int, name text);");
 }

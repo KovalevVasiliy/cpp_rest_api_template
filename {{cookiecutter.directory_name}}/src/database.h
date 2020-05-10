@@ -13,12 +13,13 @@ public:
 
 private:
     void establish_connection();
+    void LoadEnvVariables();
 
-    std::string m_dbhost = "postgres";
-    int         m_dbport = 5432;
-    std::string m_dbname = "template";
-    std::string m_dbuser = "user";
-    std::string m_dbpass = "password";
+    std::string m_dbhost;
+    int         m_dbport;
+    std::string m_dbname;
+    std::string m_dbuser;
+    std::string m_dbpass;
 
     std::shared_ptr<PGconn>  m_connection;
 };
