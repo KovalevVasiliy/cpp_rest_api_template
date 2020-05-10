@@ -39,20 +39,11 @@ Database::Database()
 
 void Database::LoadEnvVariables()
 {
-    std::cerr<<"heh1"<<std::endl;
-    char* ptr = getenv("DATABASE_HOST");
-    std::cerr<< (ptr == NULL) <<std::endl;
-    std::cerr<<ptr<<std::endl;
     m_dbhost = getenv("DATABASE_HOST");
-    std::cerr<<"heh2"<< m_dbhost << std::endl;
     m_dbport = atoi(getenv("DATABASE_PORT"));
-    std::cerr<<"heh3"<< m_dbport << std::endl;
     m_dbname = getenv("DATABASE_NAME");
-    std::cerr<<"heh4"<< m_dbname << std::endl;
     m_dbuser = getenv("DATABASE_USER");
-    std::cerr<<"heh5"<< m_dbuser <<std::endl;
     m_dbpass = getenv("DATABASE_PASSWORD");
-    std::cerr<<"heh6"<<m_dbpass << std::endl;
 }
 
 
