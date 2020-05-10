@@ -24,7 +24,7 @@ services:
       - "8000:8000"
   postgres:
     container_name: template-postgres
-    image: mdillon/postgis
+    image: postgres:11
     ports:
       - "5432:5432"
     environment:
